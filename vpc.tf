@@ -138,7 +138,7 @@ resource "aws_security_group" "task_sg_us_east_2" {
 resource "aws_instance" "task_instance_us_east_1" {
   provider                = aws.us_east_1
   ami                     = "ami-0d5eff06f840b45e9"  # Ubuntu Server 20.04 LTS AMI ID for us-east-1
-  instance_type           = "t2.micro"
+  instance_type           = "t2.small"
   subnet_id               = aws_subnet.task_subnet_us_east_1.id
   vpc_security_group_ids  = [aws_security_group.task_sg_us_east_1.id]
 
@@ -156,7 +156,7 @@ resource "aws_instance" "task_instance_us_east_1" {
 resource "aws_instance" "task_instance_us_east_2" {
   provider                = aws.us_east_2
   ami                     = "ami-0f30a9c3a48f3fa79"  # Ubuntu Server 20.04 LTS AMI ID for us-east-2
-  instance_type           = "t2.micro"
+  instance_type           = "t2.small"
   subnet_id               = aws_subnet.task_subnet_us_east_2.id
   vpc_security_group_ids  = [aws_security_group.task_sg_us_east_2.id]
 
